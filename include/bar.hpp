@@ -36,6 +36,7 @@ class Bar {
   Json::Value           config;
   Gtk::Window           window;
   struct wl_surface *   surface;
+  struct zwlr_layer_surface_v1 *layer_surface_;
   bool                  visible = true;
   bool                  vertical = false;
 
@@ -71,7 +72,6 @@ class Bar {
     int bottom = 0;
     int left = 0;
   } margins_;
-  struct zwlr_layer_surface_v1 *layer_surface_;
   // use gtk-layer-shell instead of handling layer surfaces directly
   bool                                          use_gls_ = false;
   uint32_t                                      width_ = 0;
